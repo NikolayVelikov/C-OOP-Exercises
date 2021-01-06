@@ -6,5 +6,7 @@ namespace MilitaryElite.Models.Contracts
     {
         string CodeName { get; }
         State State { get; }
+
+        void CompleteMission();
     }
 }

@@ -2,9 +2,10 @@
 
 namespace MilitaryElite.Models.Contracts.Private.SpecialSoldier
 {
-    public interface IComando : ISpecialisedSoldier
+    public interface ICommando : ISpecialisedSoldier
     {
         IReadOnlyCollection<IMission> Mission { get; }
-        void CompleteMission();
+
+        void AddMission(IMission mission);
     }
 }

@@ -15,7 +15,7 @@ namespace MilitaryElite.Models.Entities.Private.SpecialisedSoldier
 
         public Corps Corp {get; private set;}
 
-        public Corps CheckingCorp(string corp)
+        private Corps CheckingCorp(string corp)
         {
             Corps token;
             if (!Enum.TryParse<Corps>(corp, out token))
