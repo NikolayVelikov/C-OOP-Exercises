@@ -1,4 +1,6 @@
-﻿using MilitaryElite.Models.Contracts.Spy;
+﻿using System;
+
+using MilitaryElite.Models.Contracts.Spy;
 
 namespace MilitaryElite.Models.Entities.Spy
 {
@@ -10,5 +12,11 @@ namespace MilitaryElite.Models.Entities.Spy
         }
 
         public int CodeNumber {get; private set;}
+
+        public override string ToString()
+        {
+            
+            return base.ToString()+Environment.NewLine+$"Code Number: {this.CodeNumber}";
+        }
     }
 }
