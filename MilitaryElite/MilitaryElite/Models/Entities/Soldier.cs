@@ -1,5 +1,4 @@
 ﻿using MilitaryElite.Models.Contracts;
-using System.Text;
 
 namespace MilitaryElite.Models.Entities
 {
@@ -20,11 +19,7 @@ namespace MilitaryElite.Models.Entities
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine(this.GetType().Name);
-            sb.AppendLine($"Name: {this.FirstName} {this.LastName} Id: {this.Id}");
-
-            return sb.ToString().TrimEnd();
+            return $"Name: {this.FirstName} {this.LastName} Id: {this.Id}";
         }
     }
 }
