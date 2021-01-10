@@ -13,5 +13,13 @@ namespace MilitaryElite.IO.Entities
         {
             System.Console.WriteLine(text);
         }
+
+        public void WriteLineGeneral(string text)
+        {
+            System.Console.BackgroundColor = System.ConsoleColor.White;
+            System.Console.ForegroundColor = System.ConsoleColor.Black;
+            System.Console.WriteLine(text);
+            System.Console.ResetColor();
+        }
     }
 }

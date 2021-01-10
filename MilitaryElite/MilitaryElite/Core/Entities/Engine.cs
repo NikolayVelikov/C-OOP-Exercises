@@ -10,12 +10,14 @@ namespace MilitaryElite.Core.Entities
         private IWrite _write;
         private IRead _read;
         private IComandInterpretator _comandInterpretator;
+        private IAppender _logAppender;
 
-        public Engine(IWrite write, IRead read, IComandInterpretator comandInterpretator)
+        public Engine(IWrite write, IRead read, IComandInterpretator comandInterpretator, IAppender logAppender)
         {
             this._write = write;
             this._read = read;
             this._comandInterpretator = comandInterpretator;
+            this._logAppender = logAppender;
         }
 
         public void Run()
@@ -50,7 +52,16 @@ namespace MilitaryElite.Core.Entities
 
             foreach (var soldier in soldiers)
             {
-                this._write.WriteLine(soldier.ToString());
+                if (soldier.GetType().Name == "LieutenantGeneral")
+                {
+                    this._write.WriteLineGeneral(soldier.ToString());
+                }
+                else
+                {
+                    this._write.WriteLine(soldier.ToString());
+                }
+
+                this._logAppender.Write(soldier.ToString());
             }
         }
 
